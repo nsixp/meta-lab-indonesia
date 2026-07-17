@@ -1,0 +1,91 @@
+---
+import Brand from "./Brand.astro";
+import { siteConfig } from "../config/site";
+
+interface Props {
+  currentPath: string;
+  sticky?: boolean;
+}
+
+const { currentPath, sticky = false } = Astro.props;
+const normalizePath = (path: string) =>
+  path === "/" ? path : path.replace(/\/$/, "");
+const activePath = normalizePath(currentPath);
+---
+
+<nav id="navbar" class:list={["research-nav", { "sticky top-0 z-50": sticky }]}>
+  <div class="nav-shell">
+    <Brand />
+
+    <div class="desktop-nav hidden md:flex">
+      {
+        siteConfig.navigation.map((item) => (
+          <a
+            href={item.href}
+            class:list={["nav-link", { active: activePath === item.href }]}
+            aria-current={activePath === item.href ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <button
+      id="nav-toggle"
+      class="nav-toggle md:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Buka menu navigasi"
+      type="button"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden mobile-menu">
+    {
+      siteConfig.navigation.map((item) => (
+        <a
+          href={item.href}
+          class:list={["nav-link", { active: activePath === item.href }]}
+          aria-current={activePath === item.href ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<script>
+  const navToggle = document.querySelector<HTMLButtonElement>("#nav-toggle");
+  const mobileMenu = document.querySelector<HTMLElement>("#mobile-menu");
+
+  const setMenuState = (open: boolean) => {
+    if (!navToggle || !mobileMenu) return;
+
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute(
+      "aria-label",
+      open ? "Tutup menu navigasi" : "Buka menu navigasi",
+    );
+    mobileMenu.classList.toggle("hidden", !open);
+
+    const icon = navToggle.querySelector("i");
+    icon?.classList.toggle("fa-bars", !open);
+    icon?.classList.toggle("fa-xmark", open);
+  };
+
+  navToggle?.addEventListener("click", () => {
+    setMenuState(navToggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuState(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuState(false);
+  });
+</script>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  footer?: boolean;
+}
+
+const { footer = false } = Astro.props;
+---
+
+<a href="/" class="brand-lockup" aria-label="Meta Lab Indonesia">
+  <span class="brand-mark" aria-hidden={!footer ? "true" : undefined}>
+    <i class="fa-solid fa-flask-vial"></i>
+  </span>
+  <span class="brand-name">Meta Lab<br />Indonesia</span>
+</a>

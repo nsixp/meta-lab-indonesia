@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ResearchStep from "../components/ResearchStep.astro";
+import { researchSteps } from "../data/researchSteps";
+---
+
+<BaseLayout
+  title="Alur Riset"
+  description="Alur kerja riset Meta Lab Indonesia dari penentuan topik hingga publikasi dan dokumentasi."
+  stickyHeader
+>
+<main>
+      <section class="research-hero">
+        <div class="hero-pattern pattern-left" aria-hidden="true"></div>
+        <div class="hero-pattern pattern-right" aria-hidden="true"></div>
+
+        <div class="research-shell hero-grid">
+          <div class="hero-copy-block">
+            <span class="eyebrow">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              Dari ide menjadi karya ilmiah
+            </span>
+            <h1>Alur Kerja <span>Riset</span></h1>
+            <p>
+              Langkah sistematis dari konsep awal hingga publikasi jurnal
+              internasional.
+            </p>
+            <div class="hero-chips" aria-label="Nilai utama alur riset">
+              <span><i class="fa-solid fa-list-check"></i> Terstruktur</span>
+              <span><i class="fa-solid fa-people-group"></i> Kolaboratif</span>
+              <span><i class="fa-solid fa-chart-line"></i> Terukur</span>
+            </div>
+          </div>
+
+          <div class="hero-lab" aria-label="Ilustrasi aktivitas penelitian">
+            <div class="lab-glow"></div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="idea-bubble" aria-hidden="true">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="chart-panel" aria-hidden="true">
+              <div class="chart-header"><span></span><span></span><span></span></div>
+              <div class="chart-bars">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <svg viewBox="0 0 140 60" role="presentation">
+                <polyline points="5,46 35,31 60,38 92,14 132,24"></polyline>
+              </svg>
+            </div>
+            <div class="researcher" aria-hidden="true">
+              <div class="researcher-head">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="researcher-body">
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+            </div>
+            <div class="laptop" aria-hidden="true">
+              <div class="laptop-screen">
+                <i class="fa-solid fa-atom"></i>
+              </div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="microscope" aria-hidden="true">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+            <div class="book-stack" aria-hidden="true">
+              <span>RESEARCH METHODS</span>
+              <span>DATA ANALYSIS</span>
+              <span>SCIENTIFIC WRITING</span>
+            </div>
+            <div class="lab-flask" aria-hidden="true">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flow-section" aria-labelledby="flow-title">
+        <div class="flow-decoration flow-decoration-one" aria-hidden="true"></div>
+        <div class="flow-decoration flow-decoration-two" aria-hidden="true"></div>
+
+        <div class="research-shell">
+          <div class="section-intro">
+            <span class="section-kicker">10 langkah terintegrasi</span>
+            <h2 id="flow-title">Perjalanan Sebuah Riset</h2>
+            <p>
+              Setiap tahapan dirancang untuk menjaga proses tetap fokus,
+              kolaboratif, dan menghasilkan karya ilmiah berkualitas.
+            </p>
+          </div>
+
+          <div class="flow-timeline">
+            {researchSteps.map((step, index) => <ResearchStep step={step} index={index} />)}
+          </div>
+
+          <div class="flow-finish">
+            <span><i class="fa-solid fa-flag-checkered"></i></span>
+            <div>
+              <strong>Riset siap memberi dampak</strong>
+              <p>Satu perjalanan tuntas, pengetahuan baru siap dibagikan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+</BaseLayout>

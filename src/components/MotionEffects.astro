@@ -1,0 +1,76 @@
+<script>
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  const heroCopy = document.querySelector<HTMLElement>(
+    ".home-hero-copy, .inner-hero-copy, .hero-copy-block",
+  );
+  const heroVisual = document.querySelector<HTMLElement>(
+    ".home-hero-visual, .about-hero-visual, .structure-hero-visual, .hero-lab",
+  );
+
+  if (!reduceMotion) {
+    heroCopy?.classList.add("hero-enter");
+    heroVisual?.classList.add("hero-visual-enter");
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        heroCopy?.classList.add("is-visible");
+        heroVisual?.classList.add("is-visible");
+      });
+    });
+  }
+
+  const revealGroups = [
+    ".home-about-panel",
+    ".site-section-heading",
+    ".service-grid > article",
+    ".portal-banner",
+    ".vision-grid > article",
+    ".mission-list > div",
+    ".focus-grid > article",
+    ".benefits-grid > article",
+    ".values-banner",
+    ".structure-chart-shell > .flex.justify-center:first-of-type > div",
+    ".structure-chart-shell > .grid > div",
+    ".responsibility-shell > .grid > div",
+    ".responsibility-shell .space-y-4 > div",
+    ".section-intro",
+    ".flow-item",
+    ".flow-finish",
+  ];
+
+  const revealElements = Array.from(
+    document.querySelectorAll<HTMLElement>(revealGroups.join(",")),
+  );
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
+  } else {
+    revealElements.forEach((element, index) => {
+      element.classList.add("scroll-reveal");
+      element.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+
+      if (element.matches(".flow-left")) element.dataset.revealFrom = "left";
+      if (element.matches(".flow-right")) element.dataset.revealFrom = "right";
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -8%",
+        threshold: 0.12,
+      },
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+  }
+</script>

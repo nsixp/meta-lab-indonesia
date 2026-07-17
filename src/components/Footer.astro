@@ -1,0 +1,50 @@
+---
+import Brand from "./Brand.astro";
+import { siteConfig } from "../config/site";
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const activePath = currentPath === "/" ? currentPath : currentPath.replace(/\/$/, "");
+---
+
+<footer id="footer" class="research-footer">
+  <div class="footer-molecule molecule-left" aria-hidden="true"></div>
+  <div class="footer-molecule molecule-right" aria-hidden="true"></div>
+
+  <div class="research-shell footer-shell">
+    <div class="footer-brand">
+      <Brand footer />
+      <p>
+        Berdedikasi untuk kualitas riset global melalui kolaborasi ilmiah yang
+        terstruktur dan berkelanjutan.
+      </p>
+    </div>
+
+    <div class="footer-nav" aria-label="Navigasi footer">
+      {
+        siteConfig.navigation.map((item) => (
+          <a
+            href={item.href}
+            class:list={{ active: activePath === item.href }}
+            aria-current={activePath === item.href ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="footer-contact">
+      <a class="email-link" href={`mailto:${siteConfig.email}`}>
+        <i class="fa-solid fa-envelope"></i> {siteConfig.email}
+      </a>
+    </div>
+  </div>
+
+  <div class="research-shell footer-bottom">
+    <p>© {new Date().getFullYear()} Meta Lab Indonesia. Hak Cipta Dilindungi.</p>
+  </div>
+</footer>

@@ -1,0 +1,799 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Struktur Tim"
+  description="Struktur organisasi dan anggota tim riset Meta Lab Indonesia."
+  bodyClass="site-page structure-page"
+>
+<main>
+      <section id="hero" class="structure-hero inner-hero">
+        <div class="hero-pattern pattern-left" aria-hidden="true"></div>
+        <div class="hero-pattern pattern-right" aria-hidden="true"></div>
+        <div class="research-shell structure-hero-grid">
+          <div class="inner-hero-copy">
+            <span class="eyebrow"
+              ><i class="fa-solid fa-sitemap"></i> Organisasi Kolaboratif</span
+            >
+            <h1>Struktur <span>Tim</span></h1>
+            <p>
+              Sinergi 5 pilar riset profesional di bawah koordinasi strategis
+              untuk menjamin kualitas publikasi ilmiah internasional.
+            </p>
+            <div class="hero-chips">
+              <span
+                ><i class="fa-solid fa-people-group"></i> Lintas Institusi</span
+              ><span><i class="fa-solid fa-gears"></i> Peran Terarah</span>
+            </div>
+          </div>
+          <div
+            class="structure-hero-visual"
+            aria-label="Ilustrasi struktur organisasi Meta Lab Indonesia"
+          >
+            <div class="structure-scene-halo" aria-hidden="true"></div>
+            <div class="structure-orbit orbit-outer" aria-hidden="true"></div>
+            <div class="structure-orbit orbit-inner" aria-hidden="true"></div>
+
+            <div class="structure-org-panel" aria-hidden="true">
+              <span class="org-panel-lead"
+                ><i class="fa-solid fa-user-tie"></i
+              ></span>
+              <span class="org-panel-line"></span>
+              <div class="org-panel-nodes">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+
+            <div class="structure-scientists" aria-hidden="true">
+              <div class="structure-person structure-person-left">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="structure-person structure-person-main">
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+              <div class="structure-person structure-person-right">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+
+            <div class="structure-laptop" aria-hidden="true">
+              <div><i class="fa-solid fa-sitemap"></i></div>
+              <span></span>
+            </div>
+            <div class="structure-book-stack" aria-hidden="true">
+              <span>TEAM WORK</span><span>DATA &amp; METHODS</span
+              ><span>PUBLICATION</span>
+            </div>
+            <div class="structure-microscope" aria-hidden="true">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+            <div class="structure-lab-tools" aria-hidden="true">
+              <i class="fa-solid fa-flask"></i><i class="fa-solid fa-vial"></i>
+            </div>
+
+            <span class="team-node node-writing" aria-hidden="true"
+              ><i class="fa-solid fa-file-pen"></i
+            ></span>
+            <span class="team-node node-analysis" aria-hidden="true"
+              ><i class="fa-solid fa-chart-column"></i
+            ></span>
+            <span class="team-node node-developer" aria-hidden="true"
+              ><i class="fa-solid fa-code"></i
+            ></span>
+            <span class="team-node node-hr" aria-hidden="true"
+              ><i class="fa-solid fa-users-gear"></i
+            ></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORG CHART -->
+      <section id="org-chart" class="structure-chart-section">
+        <div class="research-shell structure-chart-shell">
+          <div class="site-section-heading compact-heading">
+            <span class="section-kicker">Kolaborasi Lima Pilar</span>
+            <h2>Bagan Organisasi</h2>
+            <p>
+              Setiap tim memiliki fokus yang berbeda dan bergerak dalam satu
+              koordinasi riset yang terintegrasi.
+            </p>
+          </div>
+          <!-- Koordinator -->
+          <div class="flex justify-center mb-4">
+            <div
+              class="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 flex items-center gap-5 w-96 max-w-md card-hover"
+            >
+              <img
+                src="/images/siti-jamiatul-husnaini.png"
+                class="member-avatar w-16 h-16 flex-shrink-0"
+                alt="Koordinator"
+                style="border: 3px solid #8b5cf6"
+              />
+              <div>
+                <span
+                  class="coord-badge text-purple-700 font-bold text-xs px-3 py-1 rounded-full block mb-4 w-fit"
+                  >Koordinator Riset</span
+                >
+                <p class="font-bold text-gray-900 text-sm">
+                  National Taiwan University of Science and Technology
+                </p>
+                <p class="text-gray-600 text-xs mt-1">Siti Jamiatul Husnaini</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tree connector -->
+          <div class="tree-line w-0 mx-auto"></div>
+          <div class="flex justify-center">
+            <div class="tree-h-line w-4/5 max-w-4xl"></div>
+          </div>
+
+          <!-- 5 Team Columns -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-0 items-start"
+          >
+            <!-- Writing Team -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-gray-100 team-col-blue overflow-hidden card-hover"
+            >
+              <div class="p-4 bg-blue-50">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fa-solid fa-pen-to-square text-blue-600"></i>
+                  <h4 class="font-extrabold text-gray-900 text-sm">
+                    Writing Team
+                  </h4>
+                </div>
+                <p class="text-gray-500 text-xs">
+                  Naskah akademik &amp; jurnal SCI/SSCI
+                </p>
+              </div>
+              <div class="p-4 space-y-3">
+                <div>
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    National Taiwan University of Science and Technology
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/siti-jamiatul-husnaini.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Siti Jamiatul Husnaini
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Negeri Surabaya
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/rizki-fitri-rahima-uulaa.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Rizki Fitri Rahima Uulaa
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Telkom University Purwokerto
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/rona-nisa-sofia-amriza.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Rona Nisa Sofia Amriza
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Analyst -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-gray-100 team-col-teal overflow-hidden card-hover"
+            >
+              <div class="p-4 bg-teal-50">
+                <div class="flex items-center gap-2 mb-1">
+                  <i class="fa-solid fa-chart-bar text-teal-600"></i>
+                  <h4 class="font-extrabold text-gray-900 text-sm">
+                    Data Analyst
+                  </h4>
+                </div>
+                <p class="text-gray-500 text-xs">
+                  Analisis statistik SPSS, Python, dan R.
+                </p>
+              </div>
+              <div class="p-4 space-y-3">
+                <div>
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Telkom University Purwokerto
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/rona-nisa-sofia-amriza.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Rona Nisa Sofia Amriza
+                      <span class="text-gray-400 text-xs italic"
+                        >(Behavioral Analysis)</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    National Taiwan University of Science and Technology
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/tahmida-fatmawa-zulva.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Tahmida Fatmawa Zulva
+                      <span class="text-gray-400 text-xs italic"
+                        >(Behavioral Analysis)</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <img
+                      src="/images/siti-aminatus-zehroh.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Siti Aminatus Zehroh
+                      <span class="text-gray-400 text-xs italic"
+                        >(Labeling)</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Negeri Surabaya
+                  </p>
+                  <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="/images/cendra-devayana-putra.png"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Cendra Devayana Putra
+                        <span class="text-gray-400 text-xs italic"
+                          >(NLP & Text-Mining Analysis)</span
+                        >
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Angga Zakariya
+                        <span class="text-gray-400 text-xs italic"
+                          >(NLP & Text-Mining Analysis)</span
+                        >
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="/images/rizki-fitri-rahima-uulaa.png"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Rizki Fitri Rahima Uulaa
+                        <span class="text-gray-400 text-xs italic"
+                          >(Labeling)</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    UPN Veteran Jatim
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Muhammad Aris Burhanudin
+                      <span class="text-gray-400 text-xs italic"
+                        >(Traditional Statistical Analysis)</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Collection -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-gray-100 team-col-orange overflow-hidden card-hover"
+            >
+              <div class="p-4 bg-orange-50">
+                <div class="flex items-center gap-2 mb-1">
+                  <i class="fa-solid fa-database text-orange-500"></i>
+                  <h4 class="font-extrabold text-orange-600 text-sm">
+                    Data Collection
+                  </h4>
+                </div>
+                <p class="text-gray-500 text-xs">
+                  Pengumpulan data primer sistematis &amp; valid.
+                </p>
+              </div>
+              <div class="p-4 space-y-3">
+                <div>
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Samudra
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/cut-aina-fadhilla.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Cut Aina Fadhilla
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Negeri Surabaya
+                  </p>
+                  <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="/images/erik-rahman.png"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Erik Rahman
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="/images/cendra-devayana-putra.png"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Cendra Devayana Putra
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Bangka Belitung
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/sofa-priyandayani-nasution.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Sofa Priyandayani Nasution
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    National Taiwan University of Science and Technology
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/siti-nurdianti-muhajir.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Siti Nurdianti Muhajir
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Medan
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/mona-adria-wirda.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Mona Adria Wirda
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Developer -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-gray-100 team-col-indigo overflow-hidden card-hover"
+            >
+              <div class="p-4 bg-indigo-50">
+                <div class="flex items-center gap-2 mb-1">
+                  <i class="fa-solid fa-code text-indigo-600"></i>
+                  <h4 class="font-extrabold text-gray-900 text-sm">
+                    Developer
+                  </h4>
+                </div>
+                <p class="text-gray-500 text-xs">
+                  Sistem informasi, dashboard, &amp; prototype riset.
+                </p>
+              </div>
+              <div class="p-4 space-y-3">
+                <div>
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Negeri Surabaya
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Muchammad Abdulloh 'Ubaid
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Telkom University Purwokerto
+                  </p>
+                  <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="/images/raesya-fadhil-bachtiar.png"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Raesya Fadhil Bachtiar
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="/images/dwi-sasmita-agus-anggraini.png"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Dwi Sasmita Agus Anggraini
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    UPN Veteran Jatim
+                  </p>
+                  <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Afdal Susilo
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">Haikal</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">Citra</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Devina Anindya
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-9.jpg"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Donny Arvinno Pratama
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Human Resources -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-gray-100 team-col-pink overflow-hidden card-hover"
+            >
+              <div class="p-4 bg-pink-50">
+                <div class="flex items-center gap-2 mb-1">
+                  <i class="fa-solid fa-users-gear text-pink-500"></i>
+                  <h4 class="font-extrabold text-pink-600 text-sm">
+                    Human Resources
+                  </h4>
+                </div>
+                <p class="text-gray-500 text-xs">
+                  Manajemen talenta &amp; kompetensi riset tim.
+                </p>
+              </div>
+              <div class="p-4 space-y-3">
+                <div>
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Negeri Surabaya
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/cendra-devayana-putra.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Cendra Devayana Putra
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    Universitas Negeri Malang
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <img
+                      src="/images/wahyu-nur-hidayat.png"
+                      class="member-avatar"
+                      alt=""
+                    />
+                    <p class="text-gray-700 text-xs font-medium">
+                      Wahyu Nur Hidayat
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-3">
+                  <p class="text-gray-400 text-xs font-semibold mb-2">
+                    UPN Veteran Jatim
+                  </p>
+                  <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Muhammad Aris Burhanudin
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="/images/andreas-nugroho-sihananto.png"
+                        class="member-avatar"
+                        alt=""
+                      />
+                      <p class="text-gray-700 text-xs font-medium">
+                        Andreas Nugroho Sinananto
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PERAN & TANGGUNG JAWAB -->
+      <section id="peran" class="responsibility-section">
+        <div class="research-shell responsibility-shell">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-2">
+              <h2 class="text-3xl font-extrabold text-gray-900 mb-2">
+                Peran &amp; Tanggung Jawab
+              </h2>
+              <div class="section-underline mb-4"></div>
+              <p class="text-gray-500 text-sm mb-8">
+                Struktur organisasi yang terstruktur untuk memastikan efisiensi
+                kerja dan kualitas publikasi ilmiah tingkat internasional.
+              </p>
+
+              <div class="space-y-4">
+                <!-- Koordinator -->
+                <div
+                  class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 card-hover flex gap-4 items-start"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full peran-icon-purple flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-user-tie text-purple-600 text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">
+                      Koordinator Riset
+                    </h4>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-1">
+                      Bertanggung jawab atas keseluruhan arah dan koordinasi
+                      proyek riset. Mengawasi distribusi tugas, monitoring
+                      kemajuan, dan menjamin kualitas akademik setiap tahap.
+                    </p>
+                    <p class="text-gray-400 text-xs leading-relaxed italic">
+                      Keterampilan manajemen proyek, komunikasi strategis, dan
+                      pemahaman mendalam terhadap standar publikasi SCI/SSCI.
+                    </p>
+                  </div>
+                </div>
+                <!-- Tim Writing -->
+                <div
+                  class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 card-hover flex gap-4 items-start"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full peran-icon-blue flex items-center justify-center flex-shrink-0"
+                  >
+                    <i
+                      class="fa-solid fa-pen-to-square text-blue-600 text-lg"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">
+                      Tim Writing
+                    </h4>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-1">
+                      Mengembangkan naskah artikel ilmiah, melakukan revisi
+                      struktur, penyesuaian format jurnal, dan penulisan bagian
+                      metodologi serta hasil penelitian.
+                    </p>
+                    <p class="text-gray-400 text-xs leading-relaxed italic">
+                      Kemampuan menulis akademik yang kuat, penguasaan gaya
+                      sitasi, dan keakuratan bahasa dalam konteks ilmiah.
+                    </p>
+                  </div>
+                </div>
+                <!-- Tim Data Collection -->
+                <div
+                  class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 card-hover flex gap-4 items-start"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full peran-icon-orange flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-database text-orange-500 text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">
+                      Tim Data Collection
+                    </h4>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-1">
+                      Mengumpulkan data primer secara sistematis, memastikan
+                      validitas dan reliabilitas data, serta menyimpan data
+                      dengan format yang terstruktur dan terorganisir.
+                    </p>
+                    <p class="text-gray-400 text-xs leading-relaxed italic">
+                      Keahlian dalam pengumpulan data kuantitatif/kualitatif,
+                      kecermatan teknis, dan kemampuan analisis data awal.
+                    </p>
+                  </div>
+                </div>
+                <!-- Tim Data Analysis -->
+                <div
+                  class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 card-hover flex gap-4 items-start"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full peran-icon-teal flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-chart-bar text-teal-600 text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">
+                      Tim Data Analysis
+                    </h4>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-1">
+                      Mengolah data menggunakan alat statistik, membuat
+                      interpretasi hasil, dan mendukung bagian hasil penelitian
+                      dalam penulisan.
+                    </p>
+                    <p class="text-gray-400 text-xs leading-relaxed italic">
+                      Penguasaan alat statistik (SPSS, R, Python), kemampuan
+                      visualisasi data, dan logika analitis yang kuat.
+                    </p>
+                  </div>
+                </div>
+                <!-- Tim Developer -->
+                <div
+                  class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 card-hover flex gap-4 items-start"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full peran-icon-green flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-code text-green-600 text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">
+                      Tim Developer
+                    </h4>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-1">
+                      Membuat sistem, prototype, dashboard, atau tools pendukung
+                      riset untuk meningkatkan efisiensi kerja tim dan
+                      pengelolaan data.
+                    </p>
+                    <p class="text-gray-400 text-xs leading-relaxed italic">
+                      Keterampilan pemrograman (Python, JavaScript), desain
+                      UI/UX, dan pengembangan sistem informasi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right decoration -->
+            <div class="flex justify-center items-center">
+              <div class="relative">
+                <div
+                  class="w-64 h-64 rounded-full bg-blue-50 flex items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-magnifying-glass text-blue-200"
+                    style="font-size: 8rem"
+                  ></i>
+                </div>
+                <div
+                  class="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-chart-bar text-teal-500 text-2xl"></i>
+                </div>
+                <div
+                  class="absolute -bottom-4 -left-4 w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-users text-purple-500 text-xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+</BaseLayout>

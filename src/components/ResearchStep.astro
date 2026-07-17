@@ -1,0 +1,25 @@
+---
+import type { ResearchStep } from "../data/researchSteps";
+
+interface Props {
+  step: ResearchStep;
+  index: number;
+}
+
+const { step, index } = Astro.props;
+const side = index % 2 === 0 ? "flow-right" : "flow-left";
+---
+
+<article class:list={["flow-item", side, step.tone]}>
+  <div class="flow-marker">{step.number}</div>
+  <div class="flow-card">
+    <div class="flow-content">
+      <span class="flow-label">{step.stage}</span>
+      <h3>{step.title}</h3>
+      <p>{step.description}</p>
+    </div>
+    <div class="flow-icon" aria-hidden="true">
+      <i class:list={["fa-solid", step.icon]}></i>
+    </div>
+  </div>
+</article>
