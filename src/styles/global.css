@@ -3639,6 +3639,345 @@ section > * + p {
   }
 }
 
+/* Responsive hardening for hero scenes and dense content. */
+.home-hero-grid > *,
+.inner-hero-grid > *,
+.structure-hero-grid > *,
+.hero-grid > *,
+.home-about-panel > *,
+.portal-banner > *,
+.values-banner > *,
+.footer-shell > * {
+  min-width: 0;
+}
+
+.email-link,
+.structure-page #org-chart p,
+.structure-page #peran p {
+  overflow-wrap: anywhere;
+}
+
+.structure-chart-shell > .flex.justify-center:first-of-type > div {
+  width: min(100%, 24rem);
+}
+
+.structure-chart-shell > .flex.justify-center:first-of-type > div > div,
+.structure-page #peran .space-y-4 > div > div:last-child {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .home-hero,
+  .home-hero-grid,
+  .inner-hero,
+  .inner-hero-grid,
+  .structure-hero,
+  .structure-hero-grid,
+  .research-hero,
+  .hero-grid {
+    min-height: auto;
+  }
+
+  .home-hero-grid,
+  .inner-hero-grid,
+  .structure-hero-grid,
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .home-hero-copy,
+  .inner-hero-copy,
+  .hero-copy-block {
+    padding: var(--space-15) 0 var(--space-6);
+    text-align: center;
+  }
+
+  .home-hero-copy > p,
+  .inner-hero-copy > p,
+  .hero-copy-block > p {
+    margin-inline: auto;
+  }
+
+  .hero-actions,
+  .hero-metrics,
+  .hero-chips {
+    justify-content: center;
+  }
+
+  .home-hero-visual {
+    width: min(600px, 100%);
+    height: 480px;
+    left: auto;
+    margin-inline: auto;
+    transform: none;
+  }
+
+  .about-hero-visual,
+  .structure-hero-visual {
+    width: min(620px, 100%);
+    height: 390px;
+    left: auto;
+    margin-inline: auto;
+    transform: none;
+  }
+
+  .hero-lab {
+    width: min(620px, 100%);
+    height: 415px;
+    left: auto;
+    margin-inline: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .research-page {
+    --text-display: clamp(2.8rem, 12vw, 3.65rem);
+    --text-heading-lg: clamp(1.8rem, 8vw, 2.35rem);
+  }
+
+  .research-shell,
+  .nav-shell {
+    width: min(100% - 2rem, 620px);
+  }
+
+  .home-hero-copy h1,
+  .inner-hero-copy h1,
+  .hero-copy-block h1 {
+    overflow-wrap: anywhere;
+  }
+
+  .eyebrow {
+    max-width: 100%;
+    justify-content: center;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  .hero-metrics {
+    width: min(100%, 30rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-inline: auto;
+  }
+
+  .hero-metrics div {
+    min-width: 0;
+    padding-inline: var(--space-3);
+  }
+
+  .home-hero-visual {
+    width: 600px;
+    height: 440px;
+    left: 50%;
+    margin-inline: 0;
+    transform: translateX(-50%) scale(0.88);
+    transform-origin: center bottom;
+  }
+
+  .about-hero-visual,
+  .structure-hero-visual {
+    width: 560px;
+    height: 350px;
+    left: 50%;
+    margin-inline: 0;
+    transform: translateX(-50%) scale(0.88);
+    transform-origin: center bottom;
+  }
+
+  .hero-lab {
+    width: 560px;
+    height: 365px;
+    left: 50%;
+    margin-inline: 0;
+    transform: translateX(-50%) scale(0.9);
+    transform-origin: center bottom;
+  }
+
+  .home-about-panel,
+  .portal-banner,
+  .values-banner,
+  .responsibility-shell {
+    border-radius: 20px;
+  }
+
+  .structure-chart-shell > .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-nav a {
+    flex: 1 1 50%;
+    padding-inline: var(--space-2);
+  }
+}
+
+@media (max-width: 520px) {
+  .home-hero-visual {
+    height: 370px;
+    transform: translateX(-50%) scale(0.72);
+  }
+
+  .about-hero-visual {
+    height: 305px;
+    transform: translateX(-50%) scale(0.78);
+  }
+
+  .structure-hero-visual {
+    height: 295px;
+    transform: translateX(-50%) scale(0.72);
+  }
+
+  .hero-lab {
+    width: 520px;
+    height: 320px;
+    transform: translateX(-50%) scale(0.78);
+  }
+
+  .structure-chart-shell > .flex.justify-center:first-of-type > div {
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .structure-page #org-chart .member-avatar.w-16 {
+    width: 62px;
+    height: 62px;
+  }
+
+  .benefit-copy {
+    align-items: flex-start;
+    inset: auto var(--space-3) var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .benefit-copy > span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .responsibility-shell {
+    padding: var(--space-7) var(--space-4);
+  }
+
+  .structure-page #peran .space-y-4 > div {
+    align-items: flex-start;
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 400px) {
+  .research-page {
+    --text-display: clamp(2.55rem, 13vw, 3rem);
+    --text-heading-lg: clamp(1.65rem, 8vw, 2rem);
+  }
+
+  .home-hero-copy,
+  .inner-hero-copy,
+  .hero-copy-block {
+    padding-top: var(--space-12);
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-actions .primary-button,
+  .hero-actions .secondary-button {
+    width: 100%;
+  }
+
+  .hero-metrics div {
+    padding-inline: var(--space-2);
+  }
+
+  .hero-metrics strong {
+    font-size: 0.95rem;
+  }
+
+  .home-hero-visual {
+    height: 315px;
+    transform: translateX(-50%) scale(0.55);
+  }
+
+  .about-hero-visual,
+  .structure-hero-visual {
+    height: 250px;
+    transform: translateX(-50%) scale(0.62);
+  }
+
+  .hero-lab {
+    height: 270px;
+    transform: translateX(-50%) scale(0.66);
+  }
+
+  .home-about-panel,
+  .portal-banner,
+  .values-banner {
+    padding-inline: var(--space-4);
+  }
+
+  .flow-left,
+  .flow-right {
+    padding-left: var(--space-16);
+  }
+
+  .flow-timeline::before {
+    left: 24px;
+  }
+
+  .flow-left .flow-marker,
+  .flow-right .flow-marker {
+    width: 48px;
+    height: 48px;
+    top: 24px;
+    font-size: 1rem;
+  }
+
+  .flow-left .flow-marker::after,
+  .flow-right .flow-marker::after {
+    right: -20px;
+  }
+
+  .flow-card,
+  .flow-left .flow-card {
+    padding: var(--space-4);
+  }
+
+  .flow-content,
+  .flow-content h3 {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .email-link {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 340px) {
+  .home-hero-visual {
+    height: 270px;
+    transform: translateX(-50%) scale(0.46);
+  }
+
+  .about-hero-visual,
+  .structure-hero-visual {
+    height: 220px;
+    transform: translateX(-50%) scale(0.5);
+  }
+
+  .hero-lab {
+    height: 235px;
+    transform: translateX(-50%) scale(0.54);
+  }
+
+  .research-page .hero-metrics span {
+    font-size: 0.75rem !important;
+  }
+}
+
 .visi-card {
   background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
   border: 1px solid #bae6fd;
