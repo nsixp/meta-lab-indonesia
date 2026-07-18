@@ -8,5 +8,6 @@ export const siteConfig = {
     { label: "Tentang Tim", href: "/about-team" },
     { label: "Struktur Tim", href: "/team-structure" },
     { label: "Alur Riset", href: "/research-flow" },
+    { label: "Publikasi", href: "/publications-conferences" },
   ],
 } as const;

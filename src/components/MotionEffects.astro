@@ -4,10 +4,10 @@
   ).matches;
 
   const heroCopy = document.querySelector<HTMLElement>(
-    ".home-hero-copy, .inner-hero-copy, .hero-copy-block",
+    ".home-hero-copy, .inner-hero-copy, .hero-copy-block, .publication-hero-copy",
   );
   const heroVisual = document.querySelector<HTMLElement>(
-    ".home-hero-visual, .about-hero-visual, .structure-hero-visual, .hero-lab",
+    ".home-hero-visual, .about-hero-visual, .structure-hero-visual, .hero-lab, .publication-hero-visual",
   );
 
   if (!reduceMotion) {
@@ -39,6 +39,11 @@
     ".section-intro",
     ".flow-item",
     ".flow-finish",
+    ".overview-card",
+    ".publication-section-head",
+    ".publication-filters",
+    ".publication-grid > article",
+    ".scholar-cta",
   ];
 
   const revealElements = Array.from(

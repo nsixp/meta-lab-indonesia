@@ -1,0 +1,261 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { publicationStats, publications } from "../data/publications";
+
+const filters = [
+  { value: "all", label: "Semua Karya", icon: "fa-layer-group" },
+  { value: "journal", label: "Jurnal", icon: "fa-book-open" },
+  { value: "conference", label: "Konferensi", icon: "fa-users-viewfinder" },
+  { value: "academic", label: "Karya Akademik", icon: "fa-graduation-cap" },
+];
+---
+
+<BaseLayout
+  title="Publikasi & Konferensi"
+  description="Portofolio publikasi ilmiah dan kontribusi konferensi Meta Lab Indonesia beserta para anggotanya."
+  bodyClass="site-page publications-page"
+>
+  <main>
+    <section class="inner-hero publication-hero">
+      <div class="hero-pattern pattern-left" aria-hidden="true"></div>
+      <div class="hero-pattern pattern-right" aria-hidden="true"></div>
+
+      <div class="research-shell inner-hero-grid publication-hero-grid">
+        <div class="inner-hero-copy publication-hero-copy">
+          <span class="eyebrow">
+            <i class="fa-solid fa-book-journal-whills"></i>
+            Jejak karya dan gagasan
+          </span>
+          <h1>Publikasi &amp;<br /><span>Konferensi</span></h1>
+          <p>
+            Kumpulan karya ilmiah Meta Lab Indonesia dan para anggotanya—lahir
+            dari kolaborasi, eksplorasi gagasan, dan semangat memberi dampak.
+          </p>
+          <div class="hero-chips" aria-label="Karakter karya tim riset">
+            <span><i class="fa-solid fa-people-group"></i> Karya Tim</span>
+            <span><i class="fa-solid fa-handshake"></i> Kolaboratif</span>
+            <span><i class="fa-solid fa-earth-asia"></i> Berdampak</span>
+          </div>
+        </div>
+
+        <div
+          class="publication-hero-visual"
+          aria-label="Empat anggota Meta Lab Indonesia dikelilingi ornamen publikasi ilmiah"
+        >
+          <div class="publication-scene-halo" aria-hidden="true"></div>
+          <div class="publication-scene-orbit orbit-wide" aria-hidden="true"></div>
+          <div class="publication-scene-orbit orbit-tall" aria-hidden="true"></div>
+
+          <div class="team-publication-avatars publication-avatar-grid" aria-hidden="true">
+            <img src="/images/siti-jamiatul-husnaini.png" alt="" />
+            <img src="/images/rona-nisa-sofia-amriza.png" alt="" />
+            <img src="/images/wahyu-nur-hidayat.png" alt="" />
+            <img src="/images/cut-aina-fadhilla.png" alt="" />
+            <span><i class="fa-solid fa-atom"></i></span>
+          </div>
+
+          <div class="publication-data-panel" aria-hidden="true">
+            <div><span></span><span></span><span></span></div>
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <strong>{publicationStats.totalCitations}</strong>
+            <small>Sitasi</small>
+          </div>
+
+          <div class="publication-float-note">
+            <span><i class="fa-solid fa-book-open"></i></span>
+            <div><strong>{publicationStats.totalWorks} Karya</strong><small>dan terus bertumbuh</small></div>
+          </div>
+
+          <div class="publication-book-stack" aria-hidden="true">
+            <span>JOURNAL</span><span>PROCEEDINGS</span><span>RESEARCH</span>
+          </div>
+          <span class="publication-node node-paper" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span>
+          <span class="publication-node node-award" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
+          <span class="publication-node node-idea" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="publication-overview" aria-label="Ringkasan publikasi">
+      <div class="research-shell overview-grid">
+        <article class="overview-card overview-blue">
+          <span><i class="fa-solid fa-book-open"></i></span>
+          <div>
+            <strong>{publicationStats.journals}</strong>
+            <p>Artikel jurnal lintas disiplin dan bereputasi internasional.</p>
+          </div>
+        </article>
+        <article class="overview-card overview-orange">
+          <span><i class="fa-solid fa-users-viewfinder"></i></span>
+          <div>
+            <strong>{publicationStats.conferences}</strong>
+            <p>Kontribusi pada forum dan prosiding konferensi internasional.</p>
+          </div>
+        </article>
+        <article class="overview-card overview-purple">
+          <span><i class="fa-solid fa-earth-asia"></i></span>
+          <div>
+            <strong>Global</strong>
+            <p>Kolaborasi riset dengan peneliti dan institusi lintas negara.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="daftar-karya" class="publication-list-section">
+      <div class="publication-orb orb-left" aria-hidden="true"></div>
+      <div class="publication-orb orb-right" aria-hidden="true"></div>
+      <div class="research-shell">
+        <div class="publication-section-head">
+          <div>
+            <span class="section-kicker">Portofolio Akademik</span>
+            <h2>Karya Tim &amp; Para Anggota</h2>
+            <p>
+              Telusuri artikel jurnal, prosiding konferensi, dan kontribusi
+              akademik dari kolaborasi tim maupun karya individual setiap anggota.
+            </p>
+          </div>
+          <span id="publication-count" class="result-count">
+            {publications.length} karya ditampilkan
+          </span>
+        </div>
+
+        <div class="publication-filters" role="group" aria-label="Filter karya">
+          {
+            filters.map((filter, index) => (
+              <button
+                type="button"
+                class:list={["publication-filter", { active: index === 0 }]}
+                data-filter={filter.value}
+                aria-pressed={index === 0 ? "true" : "false"}
+              >
+                <i class={`fa-solid ${filter.icon}`}></i>
+                {filter.label}
+              </button>
+            ))
+          }
+        </div>
+
+        <div class="publication-grid" aria-live="polite">
+          {
+            publications.map((publication, index) => (
+              <article
+                class={`publication-card publication-${publication.accent}`}
+                data-publication-card
+                data-type={publication.type}
+                style={`--reveal-delay: ${(index % 3) * 70}ms`}
+              >
+                <div class="publication-card-topline">
+                  <span class="publication-type">
+                    <i
+                      class:list={[
+                        "fa-solid",
+                        publication.type === "conference"
+                          ? "fa-users-viewfinder"
+                          : publication.type === "academic"
+                            ? "fa-graduation-cap"
+                            : "fa-book-open",
+                      ]}
+                    />
+                    {publication.typeLabel}
+                  </span>
+                  <span class="publication-year">{publication.year}</span>
+                </div>
+
+                <h3>{publication.title}</h3>
+                <p class="publication-authors">
+                  <i class="fa-solid fa-user-group"></i>
+                  {publication.authors}
+                </p>
+                <p class="publication-venue">
+                  <i class="fa-solid fa-building-columns"></i>
+                  {publication.venue}
+                </p>
+
+                <div class="publication-card-footer">
+                  <span class:list={["citation-count", { muted: publication.citations === undefined }]}>
+                    <i class="fa-solid fa-quote-left"></i>
+                    {publication.citations !== undefined
+                      ? `${publication.citations} sitasi`
+                      : "Data sitasi belum tersedia"}
+                  </span>
+                  <a
+                    href={publication.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Buka detail karya: ${publication.title}`}
+                  >
+                    Detail <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div id="publication-empty" class="publication-empty" hidden>
+          <i class="fa-solid fa-folder-open"></i>
+          <h3>Belum ada karya pada kategori ini</h3>
+          <p>Silakan pilih kategori lain untuk menjelajahi karya.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scholar-cta-section">
+      <div class="research-shell scholar-cta">
+        <div class="cta-book-stack" aria-hidden="true">
+          <span><i class="fa-solid fa-flask-vial"></i></span>
+          <span><i class="fa-solid fa-atom"></i></span>
+          <span><i class="fa-solid fa-lightbulb"></i></span>
+        </div>
+        <div class="scholar-cta-copy">
+          <span>Satu Tim, Banyak Gagasan</span>
+          <h2>Portofolio ini tumbuh bersama kontribusi setiap anggota.</h2>
+          <p>
+            Setiap publikasi dan konferensi baru akan menjadi bagian dari jejak
+            kolaborasi Meta Lab Indonesia dalam membangun riset yang berdampak.
+          </p>
+        </div>
+        <a href="/team-structure" class="scholar-cta-button">
+          Lihat Tim Riset <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>(
+      ".publication-filter",
+    );
+    const publicationCards = document.querySelectorAll<HTMLElement>(
+      "[data-publication-card]",
+    );
+    const countLabel = document.querySelector<HTMLElement>("#publication-count");
+    const emptyState = document.querySelector<HTMLElement>("#publication-empty");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.filter ?? "all";
+        let visibleCount = 0;
+
+        filterButtons.forEach((filterButton) => {
+          const active = filterButton === button;
+          filterButton.classList.toggle("active", active);
+          filterButton.setAttribute("aria-pressed", String(active));
+        });
+
+        publicationCards.forEach((card) => {
+          const visible =
+            selectedFilter === "all" || card.dataset.type === selectedFilter;
+          card.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+
+        if (countLabel) {
+          countLabel.textContent = `${visibleCount} karya ditampilkan`;
+        }
+        if (emptyState) emptyState.hidden = visibleCount !== 0;
+      });
+    });
+  </script>
+</BaseLayout>
